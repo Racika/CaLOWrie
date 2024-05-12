@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "988710588513",
+    "project_id": "calowrie-aba47",
+    "storage_bucket": "calowrie-aba47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988710588513:android:0b74d418bc1cfd9f811a20",
+        "android_client_info": {
+          "package_name": "com.racika.calowrie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnS-dZzGAtzbAaZXaB6LpqLXBE-LqZMQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,188 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:fitsSystemWindows="true"
+    tools:context=".OverviewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#e9967a"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:titleTextColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/overviewUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:text="Your Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/overviewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Your age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overviewUsername" />
+
+    <TextView
+        android:id="@+id/overviewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="416dp"
+        android:text="Your Email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overviewAge"
+        app:layout_constraintVertical_bias="0.027" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilePic"
+        android:layout_width="114dp"
+        android:layout_height="125dp"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.155"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <ProgressBar
+        android:id="@+id/waterProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="232dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="52dp"
+        android:progressTint="#CD183CBD"
+        android:scaleY="6"
+        app:layout_constraintBottom_toTopOf="@+id/foodProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/foodProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="232dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="56dp"
+        android:progress="45"
+        android:progressTint="#C4D65510"
+        android:scaleY="6"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/waterFoodText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:text="WATER / FOOD"
+        app:layout_constraintBottom_toTopOf="@+id/waterProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/foodButton"
+        android:layout_width="104dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/rounded_button"
+        android:onClick="addFood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/foodProgress"
+        app:srcCompat="@drawable/food" />
+
+    <ImageButton
+        android:id="@+id/waterButton"
+        android:layout_width="104dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:onClick="addWater"
+        app:layout_constraintBottom_toTopOf="@+id/foodButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/waterProgress"
+        app:srcCompat="@drawable/water" />
+
+    <ImageButton
+        android:id="@+id/changeProfilePic"
+        android:layout_width="59dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="536dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePic"
+        app:srcCompat="@drawable/upload" />
+
+    <ImageButton
+        android:id="@+id/cameraButton"
+        android:layout_width="58dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintStart_toEndOf="@+id/changeProfilePic"
+        app:layout_constraintTop_toBottomOf="@+id/profilePic"
+        app:srcCompat="@drawable/addphoto" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="323dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginBottom="81dp"
+        android:gravity="center"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:text="Welcome back! Your daily caloric limit is set to 2000, which aims to maintain weight. Please subtract or add 500 to lose / gain."
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/waterFoodText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeProfilePic" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
